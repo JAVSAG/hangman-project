@@ -107,7 +107,10 @@ function checkWord(letter){
         }  
     var maxLength=0;
     var writtenLen=maxLength + redtries.length;
-    $("#remaining").text("Wrong guesses : " + writtenLen + "/6");   
+    $("#remaining").text("Wrong guesses : " + writtenLen + "/6");  
+    if(writtenLen==6){
+        $(".spaces").text("The word was " + localStorage.getItem("savedWord") + "!");
+    }
 }
 
 function animatePress(current){
